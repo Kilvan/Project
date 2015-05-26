@@ -1,0 +1,17 @@
+<h2>Lista Graczy</h2>
+<ul>
+    {% for item in game.players %}
+        <li> {{ item.name }} </li>
+        {% else %}
+        <li> No Players </li>
+    {% endfor %}
+</ul>
+
+
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+
+{% if game.players|length >= 2 %}
+    <a href="{{ path("game", {'gameId' : game.id}) }}">PlayGame</a>
+{% endif %}

@@ -1,0 +1,9 @@
+{% for x in data.players %}
+    Gracz {{x.getName()}} znajduje się na polu {{x.getPawn().getField().getFieldNumber()}} <br />
+{% endfor %}
+
+{% if move == true %}
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+{% endif %}
